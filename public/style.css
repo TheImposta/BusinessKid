@@ -1,0 +1,569 @@
+/* ================== Global Styles ================== */
+body {
+  margin: 0; /* Remove default browser margin */
+  font-family: "Comic Neue", Arial, sans-serif; /* Main font stack */
+  background: #fff;
+  color: #333;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ================== Header ================== */
+.header {
+  background-color: #f7f7f7;
+  padding: 20px 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 1000;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  flex-wrap: wrap;
+}
+
+.header.shrink {
+  padding: 8px 15px;
+}
+
+/* Logo area */
+.logo-container {
+  display: flex;
+  align-items: flex-end;
+  gap: 8px;
+}
+
+.mascot {
+  width: 70px;
+  margin-right: -20px;
+  transform: rotate(6deg) translateY(3px);
+  filter: drop-shadow(4px 3px 3px rgba(0,0,0,0.35));
+  transition: all 0.3s ease;
+}
+
+.header.shrink .mascot {
+  width: 45px;
+  margin-right: -10px;
+}
+
+.logo-text {
+  font-family: "Fredoka One", sans-serif;
+  font-size: 2.3rem;
+  color: #1e63f0;
+  margin: 0;
+  transition: font-size 0.3s ease;
+}
+
+.header.shrink .logo-text {
+  font-size: 1.5rem;
+}
+
+/* ================== Search Bar ================== */
+.search-bar {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  position: relative; /* icon/clear btn positioned relative to this */
+  max-width: 600px;
+  padding: 10px;
+}
+
+.search-bar input {
+  width: 400px;
+  max-width: 600px;
+  padding: 10px 36px;
+  border: 1px solid #ccc;
+  border-radius: 25px;
+  font-size: 0.95rem;
+  transition: all 0.3s ease;
+}
+
+.search-bar input:focus {
+  width: 550px;
+  border-color: #1e63f0;
+  box-shadow: 0 0 6px rgba(30, 99, 240, 0.3);
+  outline: none;
+}
+
+/* search icon inside input (left) */
+.search-bar::before {
+  content: "";
+  position: absolute;
+  left: 18px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 1rem;
+  color: #888;
+  pointer-events: none;
+}
+
+/* Clear button (right inside input) */
+.search-bar .clear-btn {
+  position: absolute;
+  right: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  border: none;
+  background: none;
+  font-size: 1.1rem;
+  color: #aaa;
+  cursor: pointer;
+  display: none;
+}
+
+/* Show clear button when input isn't empty */
+.search-bar input:not(:placeholder-shown) ~ .clear-btn {
+  display: block;
+}
+
+/* ================== Header Right ================== */
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  position: relative;
+}
+
+/* start / greeting button */
+.start-btn {
+  background-color: #1e63f0;
+  color: white;
+  text-decoration: none;
+  padding: 8px 14px;
+  border-radius: 6px;
+  font-size: 1rem;
+  transition: background 0.2s ease;
+  border: none;
+  cursor: pointer;
+}
+
+.start-btn:hover {
+  background-color: #154bb3;
+}
+
+/* make keyboard focus visible for accessibility */
+.start-btn:focus {
+  outline: 3px solid rgba(30,99,240,0.18);
+  outline-offset: 2px;
+}
+
+/* Menu + search icons for mobile */
+.drawer-toggle, .mobile-search-toggle {
+  font-size: 1.4rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.mobile-search-toggle {
+  display: none; /* shown in media query */
+}
+
+/* ================== XP + Level Badges ================== */
+/* container for XP and level; hidden by adding .hidden to it via JS */
+.xp-level {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+/* individual badges */
+.xp-box, .level-box {
+  padding: 4px 8px;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  font-weight: bold;
+  min-width: 50px;
+  text-align: center;
+}
+
+.xp-box {
+  background: #eaffea;
+  color: #228b22;
+  border: 1px solid #9fdf9f;
+}
+
+.level-box {
+  background: #fff8dc;
+  color: #b8860b;
+  border: 1px solid #e6d690;
+}
+
+/* ================== XP Progress Bar ================== */
+/* small progress bar usually shown next to badges */
+.xp-progress {
+  width: 160px;
+  height: 12px;
+  background: #eee;
+  border-radius: 6px;
+  overflow: hidden;
+  margin-left: 8px;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.xp-fill {
+  height: 100%;
+  width: 0;
+  background: linear-gradient(90deg, #1e63f0, #4cafef);
+  transition: width 0.3s ease;
+}
+
+/* ================== Drawer ================== */
+.drawer {
+  position: fixed;
+  top: 0;
+  right: -100%;
+  width: 250px;
+  height: 100%;
+  background: white;
+  box-shadow: -2px 0 5px rgba(0,0,0,0.2);
+  transition: right 0.3s ease, opacity 0.3s ease;
+  opacity: 0;
+  z-index: 9999;
+  padding: 20px;
+}
+
+.drawer.open {
+  right: 0;
+  opacity: 1;
+}
+
+.drawer .close-btn {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  float: right;
+}
+
+.drawer ul {
+  list-style: none;
+  padding: 0;
+  margin-top: 40px;
+}
+
+.drawer ul li {
+  margin: 20px 0;
+}
+
+.drawer ul li a {
+  text-decoration: none;
+  font-size: 1.2rem;
+  color: #333;
+}
+
+.drawer ul li a:hover {
+  color: #1e63f0;
+}
+
+/* ================== Responsive (mobile) ================== */
+@media (max-width: 768px) {
+  .header {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .search-bar {
+    width: 100%;
+    overflow: hidden;
+    max-height: 0;
+    padding: 0;
+    opacity: 0;
+    transition: max-height 0.4s ease, opacity 0.3s ease, padding 0.3s ease;
+  }
+
+  .search-bar.open {
+    max-height: 80px;
+    opacity: 1;
+    padding: 10px 0;
+  }
+
+  .mobile-search-toggle {
+    display: block;
+  }
+
+  .header-right {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .start-btn {
+    font-size: 0.9rem;
+    padding: 6px 10px;
+  }
+
+  /* make xp-progress smaller on small screens */
+  .xp-progress { width: 120px; height: 10px; }
+}
+
+/* ================== Main Content ================== */
+main {
+  padding: 20px;
+  max-width: 800px;
+  margin: 40px auto 20px;
+  line-height: 1.6;
+}
+
+/* ================== Banner ================== */
+.banner {
+  margin-top: 80px;
+  background: linear-gradient(135deg, #3b5998, #1e63f0);
+  text-align: center;
+  padding: 60px 20px 40px;
+  color: white;
+}
+
+.banner-slogan {
+  font-size: 3rem;
+  font-weight: bold;
+  font-family: "Fredoka One", sans-serif;
+  text-shadow: 2px 3px 6px rgba(0,0,0,0.4);
+  margin: 0;
+}
+
+/* ================== Account Modal ================== */
+.account-modal {
+  display: none;
+  position: fixed;
+  z-index: 10000;
+  left: 0; top: 0;
+  width: 100%; height: 100%;
+  overflow: auto;
+  background: rgba(0,0,0,0.6);
+}
+
+.account-modal.show {
+  display: block;
+}
+
+.account-modal-content {
+  background: #fff;
+  margin: 10% auto;
+  padding: 20px;
+  border-radius: 12px;
+  width: 90%;
+  max-width: 400px;
+  text-align: center;
+}
+
+.close-account {
+  float: right;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.account-modal form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 15px;
+}
+
+.account-modal input, .account-modal select {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+.submit-btn {
+  background: #1e63f0;
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.submit-btn:hover {
+  background: #154bb3;
+}
+
+#accountMessage {
+  margin-top: 10px;
+  font-weight: bold;
+}
+
+/* ================== Partnerships ================== */
+.partnerships {
+  margin: 40px auto;
+  max-width: 900px;
+  text-align: center;
+}
+
+.partners-scroll {
+  display: flex;
+  overflow-x: auto;
+  gap: 20px;
+  padding: 10px;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: thin;
+  -webkit-overflow-scrolling: touch;
+}
+
+.partner {
+  flex: 0 0 auto;
+  scroll-snap-align: center;
+  background: #f9f9f9;
+  border-radius: 8px;
+  padding: 10px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 140px; /* base width for partner cards */
+}
+
+/* increase partner card width for larger screens */
+@media (min-width: 768px) {
+  .partner { min-width: 160px; }
+}
+
+@media (min-width: 992px) {
+  .partnerships { max-width: 1200px; }
+  .partners-scroll { justify-content: center; gap: 40px; }
+  .partner { min-width: 200px; }
+}
+
+.partner img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+/* ================== Extra Info ================== */
+.extra-info {
+  max-width: 800px;
+  margin: 40px auto;
+  line-height: 1.7;
+  text-align: center;
+}
+
+/* ================== Contact Bar ================== */
+.contact-bar {
+  background: #f7f7f7;
+  padding: 30px 20px;
+  text-align: center;
+  border-top: 2px solid #ddd;
+}
+
+.contact-bar form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.contact-bar input,
+.contact-bar textarea {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 1rem;
+}
+
+.contact-bar textarea {
+  min-height: 100px;
+}
+
+.contact-bar button {
+  background: #1e63f0;
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.contact-bar button:hover {
+  background: #154bb3;
+}
+
+/* ================== Profile wrapper & user menu (logout) ================== */
+.profile-wrapper {
+  position: relative; /* anchor for the user menu */
+  display: inline-block;
+}
+
+.user-menu {
+  position: absolute;
+  top: 110%;
+  right: 0;
+  background: white;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+  padding: 8px;
+  z-index: 100;
+  min-width: 120px;
+}
+
+.user-menu.hidden {
+  display: none;
+}
+
+.user-menu button {
+  background: none;
+  border: none;
+  padding: 6px 12px;
+  cursor: pointer;
+  width: 100%;
+  text-align: left;
+}
+
+.user-menu button:hover {
+  background: #f0f0f0;
+}
+
+/* ================== XP Popup Animation ================== */
+#xp-popup-container {
+  position: fixed;
+  bottom: 80px;
+  right: 40px;
+  pointer-events: none;
+  z-index: 2000;
+}
+
+.xp-popup {
+  font-weight: bold;
+  color: #1e63f0;
+  font-size: 1.2rem;
+  animation: floatUp 1s ease forwards;
+  opacity: 0;
+}
+
+@keyframes floatUp {
+  0% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-40px);
+    opacity: 0;
+  }
+}
+
+/* Optional: make scrollbars nicer in WebKit */
+.partners-scroll::-webkit-scrollbar {
+  height: 8px;
+}
+.partners-scroll::-webkit-scrollbar-thumb {
+  background: rgba(0,0,0,0.12);
+  border-radius: 8px;
+}
+
+/* ================== Utility ================== */
+.hidden {
+  display: none !important;
+}
+
+/* Accessibility helpers (small) */
+button:focus, a:focus, input:focus, select:focus, textarea:focus {
+  outline: 3px solid rgba(30,99,240,0.12);
+  outline-offset: 2px;
+}
