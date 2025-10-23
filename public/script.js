@@ -79,8 +79,7 @@ startBtn?.addEventListener("click", (e) => {
     // double click detected: give XP and show popup
     clearTimeout(clickTimeout);
     clickTimeout = null;
-    addXP(20);
-    showXpPopup(20);
+    addXP(0);
   }
 });
 
@@ -178,3 +177,56 @@ const savedUser = localStorage.getItem("loggedInUser");
 if (savedUser) {
   renderUserUI(savedUser);
 }
+document.addEventListener("DOMContentLoaded", () => {
+  // Auto-open signup modal if coming from learn.html
+  if (sessionStorage.getItem("openSignup") === "1") {
+    sessionStorage.removeItem("openSignup"); // clear flag
+    const signupBtn = document.getElementById("openSignup");
+    if (signupBtn) signupBtn.click(); // simulate click to open modal
+  }
+});
+function renderBadges() {
+  const container = document.getElementById("badgeContainer");
+  if (!container || typeof lessonsData === "undefined") return;
+
+  const user = localStorage.getItem("loggedInUser") || "guest";
+  container.innerHTML = "";
+
+  lessonsData.forEach((lesson, i) => {
+    const slot = document.createElement("div");
+    slot.className = "badge-slot";
+
+    const badge = document.createElement("div");
+    badge.className = "badge";
+
+    const completedKey = `${user}_lesson_${i}_completed`;
+    const isEarned = !!localStorage.getItem(completedKey);
+
+    // Emoji map for visuals
+    const emojiMap = {
+      "Lemonade": "🍋","Money": "💰","Marketing": "🎨","Brand": "🏷️",
+      "Customer": "😊","Profit": "🧮","Pitch": "🎤","Leadership": "🧭",
+      "Creativity": "💡","Budget": "💵","Social": "📱","Prototype": "🧩"
+    };
+    const key = Object.keys(emojiMap).find(k => lesson.title.includes(k)) || "Lemonade";
+    badge.textContent = emojiMap[key];
+
+    if (isEarned) {
+      badge.classList.add("earned");
+      badge.title = lesson.badge || "Badge earned!";
+    } else {
+      badge.title = "Locked";
+    }
+
+    const label = document.createElement("div");
+    label.className = "badge-label";
+    label.textContent = lesson.badge || lesson.title;
+
+    slot.appendChild(badge);
+    slot.appendChild(label);
+    container.appendChild(slot);
+  });
+}
+
+
+document.addEventListener("DOMContentLoaded", renderBadges);

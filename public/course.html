@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>BusinessKid - Learn</title>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Comic+Neue:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="learn.css" />
+</head>
+<body class="dark-mode">
+  <!-- Header -->
+  <header class="header" id="header">   
+    <div class="logo-container">
+      <img src="assets/mascot.png" alt="BusinessKid Mascot" class="mascot" id="mascot">
+      <h1 class="logo-text">BusinessKid</h1>
+    </div>
+
+    <div class="header-right">
+      <!-- XP + Level -->
+      <div class="xp-level">
+        <div id="xpBox" class="xp-box">XP: 0</div>
+        <div id="levelBox" class="level-box">Lvl: 1</div>
+      </div>
+
+      <!-- Progress bar -->
+      <div class="xp-progress">
+        <div class="xp-fill"></div>
+      </div>
+
+      <!-- User greeting -->
+      <button id="openAccount" class="start-btn">Hi, Guest</button>
+
+      <!-- Home button -->
+      <a href="index.html" class="home-btn">🏠 Home</a>
+    </div>
+  </header>
+
+  <!-- Banner -->
+  <section class="banner">
+    <div class="banner-inner">
+      <h2 class="banner-slogan">Entrepreneurship Lessons</h2>
+      <p>Learn how to turn ideas into reality, one step at a time.</p>
+    </div>
+  </section>
+
+  <!-- Signup Modal (mandatory if not logged in) -->
+  <div id="signupModal" class="signup-modal hidden">
+    <div class="signup-modal-content">
+      <h2>Join BusinessKid</h2>
+      <p>You need to <strong>sign up or log in</strong> to access lessons.</p>
+      <button id="goToSignup" class="learn-btn">Sign Up</button>
+    </div>
+  </div>
+
+  <!-- Main Content -->
+  <main class="learn-main">
+    <h2 class="learn-title">Entrepreneurship Lessons</h2>
+    <p class="learn-subtitle">Explore beginner-friendly lessons designed to teach kids the fundamentals of entrepreneurship, creativity, and money management.</p>
+
+    <!-- Search + Filter -->
+    <div class="learn-controls">
+      <input type="text" placeholder="🔎 Search lessons..." class="learn-search" />
+      <select class="learn-filter">
+        <option value="popular">Most Popular</option>
+        <option value="beginner">Beginner Friendly</option>
+        <option value="short">Short Lessons</option>
+      </select>
+      <a href="index.html" class="home-btn">🏠 Home</a>
+    </div>
+
+    <!-- Lessons grid -->
+    <div class="lessons-grid">
+      <button class="lesson-card" data-index="0">
+        <h4>Lemonade Stand Basics</h4>
+        <p>Learn how to run your first small business with a simple lemonade stand.</p>
+        <p><small>Beginner • 15 minutes</small></p>
+      </button>
+
+      <button class="lesson-card" data-index="1">
+        <h4>Money 101</h4>
+        <p>Understand earning, saving, and spending in a fun, kid-friendly way.</p>
+        <p><small>Beginner • 20 minutes</small></p>
+      </button>
+
+      <button class="lesson-card" data-index="2">
+        <h4>Marketing Magic</h4>
+        <p>Discover how to attract customers with creativity and storytelling.</p>
+        <p><small>Intermediate • 25 minutes</small></p>
+      </button>
+
+      <button class="lesson-card" data-index="3">
+        <h4>Build Your Brand</h4>
+        <p>Create a logo, name, and identity for your very own mini business.</p>
+        <p><small>Beginner • 30 minutes</small></p>
+      </button>
+
+      <button class="lesson-card" data-index="4">
+        <h4>Customer Service Secrets</h4>
+        <p>Learn how to keep customers happy and coming back for more.</p>
+        <p><small>Beginner • 20 minutes</small></p>
+      </button>
+
+      <button class="lesson-card" data-index="5">
+        <h4>Profit vs. Costs</h4>
+        <p>Understand the difference between money earned and money spent.</p>
+        <p><small>Beginner • 15 minutes</small></p>
+      </button>
+
+      <button class="lesson-card" data-index="6">
+        <h4>Pitch Your Idea</h4>
+        <p>Practice explaining your business idea with confidence and clarity.</p>
+        <p><small>Intermediate • 25 minutes</small></p>
+      </button>
+
+      <button class="lesson-card" data-index="7">
+        <h4>Teamwork & Leadership</h4>
+        <p>Discover how to lead a team and work together on projects.</p>
+        <p><small>Intermediate • 30 minutes</small></p>
+      </button>
+
+      <button class="lesson-card" data-index="8">
+        <h4>Creativity Challenge</h4>
+        <p>Come up with innovative solutions to everyday problems.</p>
+        <p><small>Beginner • 20 minutes</small></p>
+      </button>
+
+      <button class="lesson-card" data-index="9">
+        <h4>Budgeting Basics</h4>
+        <p>Learn how to plan spending to save for future goals.</p>
+        <p><small>Beginner • 25 minutes</small></p>
+      </button>
+
+      <button class="lesson-card" data-index="10">
+        <h4>Social Media Starter</h4>
+        <p>Learn how businesses use social media to attract and engage customers.</p>
+        <p><small>Intermediate • 30 minutes</small></p>
+      </button>
+
+      <button class="lesson-card" data-index="11">
+        <h4>From Idea to Prototype</h4>
+        <p>Turn your idea into a simple product or service mockup.</p>
+        <p><small>Intermediate • 35 minutes</small></p>
+      </button>
+    </div>
+  </main>
+
+
+  <script src="script.js"></script>
+  <script src="lessonsData.js"></script>
+  <script src="learn.js"></script>
+
+</body>
+</html>

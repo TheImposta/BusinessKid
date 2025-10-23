@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>BusinessKid - Learn</title>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Comic+Neue:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="learn.css" />
+</head>
+<body class="dark-mode">
+  <!-- Header -->
+  <header class="header" id="header">   
+    <div class="logo-container">
+      <img src="assets/mascot.png" alt="BusinessKid Mascot" class="mascot" id="mascot">
+      <h1 class="logo-text">BusinessKid</h1>
+    </div>
+
+    <div class="header-right">
+      <!-- XP + Level -->
+      <div class="xp-level">
+        <div id="xpBox" class="xp-box">XP: 0</div>
+        <div id="levelBox" class="level-box">Lvl: 1</div>
+      </div>
+
+      <!-- Progress bar -->
+      <div class="xp-progress">
+        <div class="xp-fill"></div>
+      </div>
+
+      <!-- User greeting -->
+      <button id="openAccount" class="start-btn">Hi, Guest</button>
+
+      <!-- Home button -->
+      <a href="index.html" class="home-btn">🏠 Home</a>
+    </div>
+  </header>
+  
+
+
+  <!-- Banner -->
+  <section class="banner">
+    <div class="banner-inner">
+      <h2 class="banner-slogan">Entrepreneurship Lessons</h2>
+      <p>Learn how to turn ideas into reality, one step at a time.</p>
+    </div>
+  </section>
+
+  <!-- Signup Modal (mandatory if not logged in) -->
+  <div id="signupModal" class="signup-modal hidden">
+    <div class="signup-modal-content">
+      <h2>Join BusinessKid</h2>
+      <p>You need to <strong>sign up or log in</strong> to access lessons.</p>
+      <button id="goToSignup" class="learn-btn">Sign Up</button>
+    </div>
+  </div>
+
+  <!-- Main Content -->
+  <main class="learn-main">
+
+    <!-- World Map -->
+    <section class="world-map">
+      <h2 class="learn-title">World Map  -  Entrepreneurship Lessons</h2>
+      <p class="learn-subtitle">Explore the land, and complete the lessons!</p>
+      <p class="learn-subtitle">Explore beginner-friendly lessons designed to teach kids the fundamentals of entrepreneurship, creativity, and money management.</p>
+
+      <div class="map-row">
+        <div class="map-node unlocked" data-index="0" data-req="1">🍋 Lemonade Village</div>
+        <div class="map-node locked" data-index="1" data-req="1">💰 Money Meadow</div>
+        <div class="map-node locked" data-index="4" data-req="1">😊 Service Square</div>
+      </div>
+
+      <div class="map-row">
+        <div class="map-node locked" data-index="2" data-req="2">🎨 Marketing Town</div>
+        <div class="map-node locked" data-index="3" data-req="2">🏷️ Brand Bridge</div>
+        <div class="map-node locked" data-index="5" data-req="2">🧮 Profit Plains</div>
+      </div>
+
+      <div class="map-row">
+        <div class="map-node boss locked" data-index="6" data-req="3">👑 Pitch Castle</div>
+        <div class="map-node locked" data-index="7" data-req="3">🧭 Leadership Ridge</div>
+        <div class="map-node locked" data-index="8" data-req="3">💡 Creativity Cove</div>
+      </div>
+
+      <div class="map-row">
+        <div class="map-node locked" data-index="9" data-req="4">💵 Budget Bay</div>
+        <div class="map-node locked" data-index="10" data-req="4">📱 Social City</div>
+        <div class="map-node boss locked" data-index="11" data-req="4">🧩 Prototype Fortress</div>
+      </div>
+    </section>
+  </main>
+
+
+  <script src="script.js"></script>
+  <script src="lessonsData.js"></script>
+  <script src="learn.js"></script>
+
+</body>
+</html>

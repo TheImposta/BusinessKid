@@ -1,0 +1,308 @@
+/* Dark mode background */
+body {
+  margin: 0;
+  font-family: "Comic Neue", Arial, sans-serif;
+  background-color: #121212;
+  color: #ddd;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 20px;
+  background-color: #1f1f1f;
+  color: #28a745;
+}
+
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.user-greeting {
+  font-weight: bold;
+  color: #fff;
+}
+
+.user-xp {
+  font-weight: bold;
+  color: #ffd700; /* gold/yellow for XP */
+}
+
+
+/* Modal backdrop */
+.signup-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.85);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+}
+
+/* Hidden state */
+.hidden {
+  display: none;
+}
+
+/* Modal box */
+.signup-modal-content {
+  background-color: #1f1f1f;
+  padding: 30px;
+  border-radius: 12px;
+  text-align: center;
+  width: 90%;
+  max-width: 400px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.6);
+  animation: popIn 0.3s ease;
+}
+
+.signup-modal-content h2 {
+  margin-bottom: 12px;
+  color: #28a745;
+}
+
+.signup-modal-content p {
+  margin-bottom: 20px;
+  color: #ddd;
+}
+
+.learn-btn {
+  background-color: #28a745;
+  color: white;
+  border: 2px solid yellow;
+  padding: 12px 20px;
+  font-size: 1.1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.learn-btn:hover {
+  transform: scale(1.05);
+}
+
+/* Animation */
+@keyframes popIn {
+  from { transform: scale(0.8); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+/* Lessons grid */
+.lessons-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+  padding: 30px;
+}
+
+/* Lesson cards */
+.lesson-card {
+  background-color: #1f1f1f;
+  border: 2px solid #28a745;
+  border-radius: 12px;
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.lesson-card h4 {
+  color: #28a745;
+  margin-bottom: 10px;
+}
+
+.lesson-card p {
+  color: #ddd;
+  font-size: 0.95rem;
+}
+
+.lesson-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.7);
+}
+/* Learn page layout */
+.learn-main {
+  max-width: 1000px;
+  margin: 40px auto;
+  padding: 0 20px;
+}
+
+.learn-title {
+  font-size: 2rem;
+  margin-bottom: 8px;
+  color: #28a745;
+  text-align: center;
+}
+
+.learn-subtitle {
+  text-align: center;
+  margin-bottom: 30px;
+  color: #ccc;
+}
+
+/* Controls (search + filter) */
+.learn-controls {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 30px;
+  flex-wrap: wrap;
+}
+
+.learn-search {
+  flex: 1;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #444;
+  background: #1f1f1f;
+  color: #eee;
+}
+
+.learn-filter {
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #444;
+  background: #1f1f1f;
+  color: #eee;
+}
+
+/* Home button */
+.home-btn {
+  background-color: #28a745;
+  color: white;
+  padding: 8px 14px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background 0.2s, transform 0.2s;
+}
+
+.home-btn:hover {
+  background-color: #218838;
+  transform: scale(1.05);
+}
+/* Progress bar */
+.xp-progress {
+  width: 160px;
+  height: 12px;
+  background: #eee;
+  border-radius: 6px;
+  overflow: hidden;
+  margin-left: 8px;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.xp-fill {
+  height: 100%;
+  width: 0;
+  background: linear-gradient(90deg, #1e63f0, #4cafef);
+  transition: width 0.3s ease;
+}
+
+/* XP + Level badges */
+.xp-level {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.xp-box, .level-box {
+  padding: 4px 8px;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  font-weight: bold;
+  min-width: 50px;
+  text-align: center;
+}
+
+.xp-box {
+  background: #eaffea;
+  color: #228b22;
+  border: 1px solid #9fdf9f;
+}
+
+.level-box {
+  background: #fff8dc;
+  color: #b8860b;
+  border: 1px solid #e6d690;
+}
+.world-map {
+  margin: 30px auto;
+  max-width: 1000px;
+  padding: 0 20px;
+}
+.map-row {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  margin-bottom: 16px;
+}
+.map-node {
+  padding: 14px 16px;
+  border-radius: 12px;
+  background: #1f1f1f;
+  border: 2px solid #444;
+  color: #ddd;
+  min-width: 180px;
+  text-align: center;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+  transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
+}
+.map-node.unlocked { border-color: #28a745; }
+.map-node.locked { border-color: #555; opacity: 0.6; cursor: not-allowed; }
+.map-node.boss { border-color: gold; color: #ffd700; font-weight: 700; }
+.map-node.unlocked:hover { transform: translateY(-3px); box-shadow: 0 6px 16px rgba(0,0,0,0.6); }
+.badge-shelf {
+  margin: 40px auto;
+  max-width: 900px;
+  text-align: center;
+  padding: 0 20px;
+}
+.badge-title {
+  color: #28a745;
+  margin-bottom: 6px;
+}
+.badge-subtitle {
+  color: #ccc;
+  margin-bottom: 16px;
+}
+.badge-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  justify-content: center;
+}
+.badge {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  background: #1f1f1f;
+  border: 2px solid #555;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 28px;
+  color: #ddd;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+  transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
+}
+.badge:hover { transform: translateY(-3px); box-shadow: 0 6px 16px rgba(0,0,0,0.7); }
+.badge.earned { background: #ffd700; color: #222; border-color: #fff; }
+.badge-label {
+  font-size: 12px;
+  margin-top: 6px;
+  color: #bbb;
+}
+.badge-slot {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}

@@ -1,0 +1,92 @@
+.lesson-container {
+  max-width: 860px;
+  margin: 80px auto;
+  padding: 20px;
+  background: #111;
+  color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.4);
+}
+
+.lesson-header h2 {
+  color: #00c853;
+  font-size: 28px;
+  margin-bottom: 10px;
+}
+
+.lesson-header p {
+  color: #aaa;
+  font-style: italic;
+}
+
+.lesson-content {
+  line-height: 1.6;
+  font-size: 18px;
+  margin-top: 20px;
+  margin-bottom: 24px;
+}
+
+.lesson-quest, .lesson-badge, .lesson-rewards, .lesson-challenge {
+  margin-bottom: 16px;
+  font-size: 16px;
+  color: #ccc;
+}
+
+.lesson-badge {
+  font-weight: bold;
+  color: gold;
+}
+
+.lesson-rewards p {
+  margin: 4px 0;
+}
+
+.lesson-challenge input[type="number"],
+.lesson-challenge input[type="text"],
+.lesson-challenge textarea,
+.lesson-challenge select {
+  margin: 6px 0;
+  padding: 8px;
+  border-radius: 8px;
+  border: 1px solid #444;
+  background: #1f1f1f;
+  color: #eee;
+}
+
+.lesson-challenge button {
+  margin-top: 8px;
+  background: #1e63f0;
+  color: #fff;
+  border: none;
+  padding: 10px 14px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+.lesson-challenge button:hover { background: #3a7bff; }
+
+.lesson-navigation {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 24px;
+}
+
+.lesson-navigation button {
+  background: #00c853;
+  color: #fff;
+  border: none;
+  padding: 10px 18px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+}
+.lesson-navigation button:hover { background: #00e676; }
+
+.challenge-result {
+  margin-top: 12px;
+  padding: 10px;
+  background: #0d0d0d;
+  border: 1px solid #333;
+  border-radius: 8px;
+}
+
+.small-note { font-size: 13px; color: #aaa; }

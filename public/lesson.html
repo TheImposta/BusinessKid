@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>BusinessKid - Lesson</title>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Comic+Neue:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="lesson.css" />
+</head>
+<body class="dark-mode">
+  <!-- Header -->
+  <header class="header">
+    <div class="logo-container">
+      <img src="assets/mascot.png" alt="Mascot" class="mascot">
+      <h1 class="logo-text">BusinessKid</h1>
+    </div>
+
+    <div class="header-right">
+      <div class="xp-level">
+        <div id="xpBox" class="xp-box">XP: 0</div>
+        <div id="levelBox" class="level-box">Lvl: 1</div>
+      </div>
+
+      <div class="xp-progress">
+        <div class="xp-fill"></div>
+      </div>
+
+      <button id="openAccount" class="start-btn">Hi, User!</button>
+      <a href="index.html" class="home-btn">🏠 Home</a>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="lesson-container">
+    <div class="lesson-header">
+      <h2 id="lessonTitle">Loading...</h2>
+      <p id="lessonDifficulty"></p>
+    </div>
+
+    <div id="lessonContent" class="lesson-content">
+      <p>Loading lesson content...</p>
+    </div>
+
+    <div id="lessonQuest" class="lesson-quest"></div>
+    <div id="lessonBadge" class="lesson-badge"></div>
+    <div id="lessonRewards" class="lesson-rewards"></div>
+    <div id="challengeArea" class="lesson-challenge"></div>
+
+    <div class="lesson-navigation">
+      <button id="prevLesson">← Previous</button>
+      <button id="nextLesson">Next →</button>
+    </div>
+  </main>
+
+  <!-- XP Popup Container -->
+  <div id="xp-popup-container"></div>
+
+  <!-- Scripts -->
+  <script src="script.js"></script>
+  <script src="lessonsData.js"></script>
+  <script src="lesson.js"></script>
+</body>
+</html>

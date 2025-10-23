@@ -123,6 +123,7 @@ body {
   align-items: center;
   gap: 12px;
   position: relative;
+  justify-content: flex-end;
 }
 
 /* start / greeting button */
@@ -189,6 +190,25 @@ body {
   color: #b8860b;
   border: 1px solid #e6d690;
 }
+
+/* Make XP bar more visible on mobile */
+@media (max-width: 600px) {
+  .xp-progress {
+    width: 150px;   /* make it wider */
+    height: 14px;   /* make it thicker */
+  }
+
+  .xp-level {
+    flex-direction: column; /* stack XP + Level vertically */
+    align-items: flex-start;
+  }
+
+  .header-right {
+    flex-wrap: wrap; /* prevent squishing */
+    gap: 8px;
+  }
+}
+
 
 /* ================== XP Progress Bar ================== */
 /* small progress bar usually shown next to badges */
@@ -305,6 +325,12 @@ main {
   max-width: 800px;
   margin: 40px auto 20px;
   line-height: 1.6;
+  font-size: 1.1rem;
+
+}
+main p {
+  font-size: clamp(0.9rem, 2vw, 1.2rem);
+  line-height: 1.7; /* slightly more space between lines */
 }
 
 /* ================== Banner ================== */
@@ -312,16 +338,31 @@ main {
   margin-top: 80px;
   background: linear-gradient(135deg, #3b5998, #1e63f0);
   text-align: center;
-  padding: 60px 20px 40px;
+  padding: 90px 30px 60px;
   color: white;
 }
 
 .banner-slogan {
-  font-size: 3rem;
+  font-size: 2.5rem;; /* default size (desktop/laptop) */
   font-weight: bold;
+  line-height: 1.2;
   font-family: "Fredoka One", sans-serif;
   text-shadow: 2px 3px 6px rgba(0,0,0,0.4);
   margin: 0;
+}
+
+/* Medium screens (tablets) */
+@media (max-width: 600px) {
+  .banner-slogan {
+    font-size: 2rem;
+  }
+}
+
+/* Small screens (phones) */
+@media (max-width: 300px) {
+  .banner-slogan {
+    font-size: 1.5rem;
+  }
 }
 
 /* ================== Account Modal ================== */
@@ -440,6 +481,35 @@ main {
   margin: 40px auto;
   line-height: 1.7;
   text-align: center;
+}
+.learn-button-wrapper {
+  text-align: center;
+  margin: 30px 0 20px; /* space above/below */
+}
+/*================= Learn Button ================== */
+.learn-btn {
+  background-color: #28a745; /* green */
+  color: white;
+  padding: 24px 40px; /* bigger than before */
+  font-size: clamp(1.1rem, 2vw, 1.7rem);  /* larger text */
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+  border: 2px solid #3dfff2; /* subtle yellow outline */
+  transition: all 0.2s ease;
+}
+
+.learn-btn:hover {
+  background-color: #218838; /* darker green on hover */
+  border-color: #35dcfd; /* slightly brighter yellow on hover */
+}
+
+
+@media (max-width: 768px) {
+  .learn-btn {
+    width: 80%;
+    padding: 10px 0;
+  }
 }
 
 /* ================== Contact Bar ================== */
@@ -566,4 +636,197 @@ main {
 button:focus, a:focus, input:focus, select:focus, textarea:focus {
   outline: 3px solid rgba(30,99,240,0.12);
   outline-offset: 2px;
+}
+
+.home-btn {
+  background-color: #eee;
+  color: #333;
+  text-decoration: none;
+  padding: 8px 14px;
+  border-radius: 6px;
+  font-size: 1rem;
+  transition: background 0.2s ease;
+}
+
+.home-btn:hover {
+  background-color: #ddd;
+}
+
+.badge-container {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 20px;
+  justify-items: center;
+  margin-top: 20px;
+}
+
+.badge-slot {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.badge {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  background: #333;
+  border: 2px solid #555;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 28px;
+  color: #ddd;
+  transition: transform 0.2s;
+}
+
+.badge.earned {
+  background: gold;
+  color: #222;
+  border-color: #fff;
+}
+
+.badge:hover {
+  transform: scale(1.1);
+}
+
+.badge-label {
+  font-size: 12px;
+  margin-top: 6px;
+  color: #bbb;
+  text-align: center;
+  max-width: 80px;
+}
+
+.badge-banner {
+  background: linear-gradient(135deg, #4da6ff, #1f3d7a); /* lighter blue gradient */
+  padding: 12px 20px; /* thinner than the slogan banner */
+  border-radius: 8px;
+  text-align: center;
+  margin-bottom: 20px;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.3);
+}
+
+.badge-banner h2 {
+  margin: 0;
+  font-size: 1.6rem;
+  color: #fff;
+}
+
+.badge-banner p {
+  margin: 4px 0 0;
+  font-size: 0.95rem;
+  color: #e0eaff; /* softer blue-white */
+}
+/* ===== About Page Styling ===== */
+
+.about-page {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  font-family: "Comic Neue", "Fredoka One", sans-serif;
+  line-height: 1.6;
+  color: #f5f5f5;
+}
+
+/* Hero Section */
+.about-hero {
+  text-align: center;
+  padding: 60px 20px;
+  background: linear-gradient(135deg, #28a745, #1f1f1f);
+  border-radius: 12px;
+  margin-bottom: 40px;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.4);
+}
+.about-hero h1 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+  color: #fff;
+}
+.about-hero .tagline {
+  font-size: 1.2rem;
+  color: #e0ffe0;
+}
+
+/* Section Headings */
+.about-page section h2 {
+  font-size: 1.8rem;
+  margin-bottom: 12px;
+  color: #28a745;
+  border-bottom: 2px solid #28a745;
+  display: inline-block;
+  padding-bottom: 4px;
+}
+
+/* Story & Mission */
+.about-mission, .about-story, .about-founder {
+  margin-bottom: 40px;
+  background: #1f1f1f;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+}
+
+/* Values Section */
+.about-values {
+  margin-bottom: 40px;
+  background: #222;
+  padding: 20px;
+  border-radius: 10px;
+}
+.about-values ul {
+  list-style: none;
+  padding: 0;
+}
+.about-values li {
+  margin: 8px 0;
+  padding-left: 28px;
+  position: relative;
+}
+.about-values li::before {
+  content: "⭐";
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+/* Vision Section */
+.about-vision {
+  margin-bottom: 40px;
+  background: #1f1f1f;
+  padding: 20px;
+  border-radius: 10px;
+}
+.about-vision ul {
+  list-style: disc;
+  margin-left: 20px;
+}
+
+/* Call to Action */
+.about-cta {
+  text-align: center;
+  padding: 40px 20px;
+  background: linear-gradient(135deg, #4da6ff, #1f3d7a);
+  border-radius: 12px;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.4);
+}
+.about-cta h2 {
+  color: #fff;
+}
+.about-cta p {
+  color: #e0eaff;
+  margin-bottom: 20px;
+}
+.about-cta .cta-btn {
+  background: #ffd700;
+  color: #222;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-weight: bold;
+  text-decoration: none;
+  transition: transform 0.2s, background 0.2s;
+}
+.about-cta .cta-btn:hover {
+  transform: scale(1.05);
+  background: #ffea4d;
 }

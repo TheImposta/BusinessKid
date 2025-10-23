@@ -63,16 +63,8 @@
     <section class="banner">
       <div class="banner-inner">
         <h2 class="banner-slogan">Learn. Play. Launch.</h2>
+        <h5>Our Company Slogan</h5>
       </div>
-    </section>
-
-    <!-- Badge Shelf -->
-    <section class="badge-shelf">
-      <div class="badge-banner">
-        <h2>Your Badges</h2>
-        <p>Complete lessons to earn badges. Boss levels grant special badges.</p>
-      </div>
-      <div id="badgeContainer" class="badge-container"></div>
     </section>
 
 
@@ -130,85 +122,88 @@
     </div>
 
     <!-- Main Content -->
-    <main>
-      <p>
-        Welcome to <strong>BusinessKid</strong> – where learning business is
-        fun, engaging, and built just for young learners. 🚀
-      </p>
-      <p>
-        <strong>Courses:</strong> Explore a growing list of courses designed to
-        introduce children and teens to the fundamentals of business.
-      </p>
-      <p>
-        <strong>About:</strong> Learn more about the mission behind BusinessKid.
-      </p>
-      <p>
-        <strong>Contact:</strong> A support system will be available to help
-        with questions.
-      </p>
-      <p>
-        <strong>Start Learning:</strong> Click the button to begin your journey.
-      </p>
-
-      <!-- Learn Page Button -->
-      <div class="learn-button-wrapper">
-        <a href="learn.html" class="learn-btn">Begin your journey!</a>
-      </div>
-
-      <!-- Partnerships -->
-      <section class="partnerships">
-        <h3>Our Partnerships</h3>
-        <div class="partners-scroll">
-          <div class="partner">
-            <img
-              src="https://placehold.co/160x80?text=KidCo"
-              alt="KidCo logo"
-            />
-          </div>
-          <div class="partner">
-            <img
-              src="https://placehold.co/160x80?text=BizGrow"
-              alt="BizGrow logo"
-            />
-          </div>
-          <div class="partner">
-            <img
-              src="https://placehold.co/160x80?text=YoungMinds"
-              alt="YoungMinds logo"
-            />
-          </div>
-          <div class="partner">
-            <img
-              src="https://placehold.co/160x80?text=StartupSpark"
-              alt="StartupSpark logo"
-            />
-          </div>
-          <div class="partner">
-            <img
-              src="https://placehold.co/160x80?text=FutureGen"
-              alt="FutureGen logo"
-            />
-          </div>
-        </div>
+    <main class="about-page">
+      <!-- Hero Section -->
+      <section class="about-hero">
+        <h1>About BusinessKid</h1>
+        <p class="tagline">Empowering the next generation of entrepreneurs</p>
       </section>
 
-      <!-- Extra Info -->
-      <section class="extra-info">
-        <h3>Why BusinessKid?</h3>
+      <!-- Mission -->
+      <section class="about-mission">
+        <h2>Our Mission</h2>
         <p>
-          We believe that every child has the potential to become a creative
-          thinker, an entrepreneur, or a leader in their own unique way.
+          At <strong>BusinessKid</strong>, our mission is simple: to make entrepreneurship fun,
+          accessible, and inspiring for kids everywhere. We believe the next generation of innovators
+          shouldn’t have to wait until adulthood to learn how businesses are built — they can start today.
+        </p>
+      </section>
+
+      <!-- Story -->
+      <section class="about-story">
+        <h2>Our Story</h2>
+        <p>
+          Hi, I’m <strong>Ayub</strong>, a 13‑year‑old 9th grade student and the founder of BusinessKid.
+          When I first became curious about entrepreneurship, I searched everywhere for resources designed
+          for kids like me. I found plenty of guides for adults, but almost nothing that explained business
+          in a way kids could understand and enjoy. So I decided to build what I couldn’t find — a platform
+          where kids can learn entrepreneurship through games, challenges, and creativity.
         </p>
         <p>
-          Our courses blend real-world business ideas with fun, kid-friendly
-          examples that spark curiosity and confidence.
+          What started as my personal project has grown into <strong>BusinessKid</strong>, a place where
+          young learners can explore the world of business step by step.
         </p>
+      </section>
+
+      <!-- Values -->
+      <section class="about-values">
+        <h2>Our Values</h2>
+        <ul>
+          <li><strong>Creativity</strong> – finding new ways to solve problems</li>
+          <li><strong>Responsibility</strong> – learning how choices affect outcomes</li>
+          <li><strong>Teamwork</strong> – working together to achieve goals</li>
+          <li><strong>Confidence</strong> – believing in your ideas and voice</li>
+          <li><strong>Resilience</strong> – learning from mistakes and trying again</li>
+          <li><strong>Fun</strong> – because learning works best when it’s exciting</li>
+        </ul>
+      </section>
+
+      <!-- Vision -->
+      <section class="about-vision">
+        <h2>Our Vision</h2>
         <p>
-          From lemonade stands to startup dreams, BusinessKid makes learning
-          practical, exciting, and engaging.
+          BusinessKid is just getting started. Our vision is to expand far beyond online lessons:
         </p>
+        <ul>
+          <li>Add many more interactive lessons and challenges</li>
+          <li>Create in‑person tours and workshops for young entrepreneurs</li>
+          <li>Build a global community of kids learning and sharing together</li>
+          <li>Offer new tools, games, and resources to make business education even more engaging</li>
+        </ul>
+      </section>
+
+      <!-- Founder -->
+      <section class="about-founder">
+        <h2>About the Founder</h2>
+        <p>
+          I’m Ayub, a student and aspiring entrepreneur. I started BusinessKid because I believe kids
+          deserve the chance to learn entrepreneurship early, just like math or science. My goal is to
+          inspire other kids around the world to see themselves as creators, leaders, and problem‑solvers.
+        </p>
+      </section>
+
+      <!-- Call to Action -->
+      <section class="about-cta">
+        <h2>Join Us</h2>
+        <p>
+          Whether you’re a parent, teacher, or a curious kid, we invite you to join us on this journey.
+          Explore our lessons, earn badges, and discover the exciting world of entrepreneurship with
+          BusinessKid.
+        </p>
+        <a href="learn.html" class="cta-btn">Start Learning</a>
       </section>
     </main>
+
 
     <!-- Contact Bar -->
     <section class="contact-bar">
@@ -222,17 +217,6 @@
       </form>
     </section>
 
-    <!-- XP popup container (required for +XP animation) -->
-    <div id="xp-popup-container" aria-hidden="true"></div>
-
-    <!-- Invisible helper button used by learn.html -> index redirect to open signup modal -->
-    <button id="openSignup" class="hidden" aria-hidden="true"></button>
-    <script>
-      // if another script simulates click('openSignup'), we want it to open the account modal
-      document.getElementById("openSignup")?.addEventListener("click", () => {
-        document.querySelector(".account-modal")?.classList.add("show");
-      });
-    </script>
 
     <!-- Main script (deferred for faster parsing) -->
     <script src="script.js"></script>
